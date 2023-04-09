@@ -1,0 +1,51 @@
+<%= form_for @article do |f| %>
+ 
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="row justify-content-lg-center">
+      <div class="col-12 col-lg-9">
+        <div class="bg-white border rounded shadow-sm overflow-hidden">
+          <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
+            <div class="col-12">
+              <%= f.label :title %>
+              <span class="text-danger">*</span>
+              <div class="input-group">
+                <%= f.text_field :title, class: "form-control" %>
+              </div>
+            </div>
+            <div class="col-12">
+              <%= f.label :subtitle %>
+              <span class="text-danger">*</span>
+              <br>
+              <%= f.text_area :subtitle, class: "form-control" %>
+            </div>
+            <div class="col-12">
+              <%= f.label :text %>
+              <span class="text-danger">*</span>
+              <br>
+              <%= f.text_area :text, class: "form-control" %>
+            </div>
+            <div class="col-12">
+              <div class="d-grid">
+                <%= f.submit %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
