@@ -1,10 +1,15 @@
-<header class="masthead" style="background-image: url('<%= asset_path 'cover-theme.jpeg' %>')">
+<header class="masthead" style="background-image: url('<%= if params[:controller] == 'articles' && params[:action] == 'show'; asset_path 'book-cover.png'; else; asset_path 'cover-theme.jpeg'; end %>')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <h1>THE BOOK LOVER</h1>
-                    <span class="subheading">READ ALL ABOUT IT</span>
+                    <% if params[:controller] == 'articles' && params[:action] == 'show' %>
+                        <h1 class="text-uppercase"><%= Article.find(params[:id]).title %></h1>
+                        <span class="text-uppercase subheading"><%= Article.find(params[:id]).subtitle %><span>
+                    <% else %>
+                        <h1 class="text-uppercase">The book lover</h1>
+                        <span class="text-uppercase subheading">Read all about it</span>
+                    <% end %>
                 </div>
             </div>
         </div>
