@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
     end
 
-    def after_sign_in_path_for(users_path)
-      user_path(current_user) # your path
-    end
+    # def after_sign_in_path_for(users_path)
+      # user_path(current_user) # your path
+    # end 
   end
   

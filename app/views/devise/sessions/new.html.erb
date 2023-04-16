@@ -1,26 +1,48 @@
-<h2>Log in</h2>
- 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name, autofocus: true, class: "form-control" %>
-  </div>
- 
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-  </div>
- 
-  <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<section class="py-3 py-md-4 bsb-py-xl-1">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+        <div class="mb-5">
+          <h3 class="text-center mb-4">Welcome back you've been missed!</h3>
+        </div>
+        <div class="card border border-light-subtle rounded-4">
+          <div class="card-body p-3 p-md-4 p-xl-5">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <h2 class="text-center mb-4">SIGN IN</h2>
+              <div class="row gy-3 overflow-hidden">
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <%= f.label :user_name %><br />
+                    <%= f.text_field :user_name, autofocus: true, class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <%= f.label :password %><br />
+                    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <% if devise_mapping.rememberable? -%>
+                    <div class="form-group">
+                      <%= f.check_box :remember_me %>
+                      <%= f.label :remember_me %>
+                    </div>
+                  <% end -%>
+                </div>
+                <div class="col-12">
+                  <div class="d-grid">
+                    <%= f.submit "LOG IN NOW", class: "btn btn-primary" %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-4">
+          <%= render "devise/shared/links", class: "link-secondary text-decoration-none" %>
+        </div>
+      </div>
     </div>
-  <% end -%>
- 
-  <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-primary" %>
   </div>
-<% end %>
- 
-<%= render "devise/shared/links" %>
+</section>
