@@ -1,9 +1,15 @@
-<header class="masthead" style="background-image: url('<%= if params[:controller] == 'articles' && params[:action] == 'show'; asset_path 'book-cover.png'; else; asset_path 'cover-theme.jpeg'; end %>')">
+<% if params[:controller] == 'articles' && (params[:action] == 'show' || params[:action] == 'edit') %>
+    <% background = Article.find(params[:id]).background %>
+<% else %>
+    <% background = 'cover-theme.jpeg' %>
+<% end %>
+
+<header class="masthead" style="background-image: url('<%= asset_path background %>')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <% if params[:controller] == 'articles' && params[:action] == 'show' %>
+                    <% if params[:controller] == 'articles' && (params[:action] == 'show' || params[:action] == 'edit') %>
                         <h1 class="text-uppercase"><%= Article.find(params[:id]).title %></h1>
                         <span class="text-uppercase subheading"><%= Article.find(params[:id]).subtitle %><span>
                     <% else %>

@@ -39,6 +39,12 @@
               <%= f.text_area :text, class: "form-control" %>
             </div>
             <div class="col-12">
+              <%= f.label :background %>
+              <span class="text-danger">*</span>
+              <br>
+              <%= f.file_field :background, class: "form-control" %>
+            </div>
+            <div class="col-12">
               <div class="d-grid">
                 <%= f.submit %>
               </div>
