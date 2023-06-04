@@ -73,6 +73,12 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.2.0)
+    cocaine (0.6.0)
+      terrapin (= 0.6.0)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -206,6 +212,8 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.1-x86_64-darwin)
     ssrf_filter (1.1.1)
+    terrapin (0.6.0)
+      climate_control (>= 0.0.3, < 1.0)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.1.0)
@@ -240,10 +248,12 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   chromedriver-helper
+  ckeditor (~> 4.2.4)
   coffee-rails (~> 4.2)
   devise (~> 4.1)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mini_magick
   puma (~> 3.11)
   rails (~> 5.2.8, >= 5.2.8.1)
   sass-rails (~> 5.0)
