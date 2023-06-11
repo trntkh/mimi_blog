@@ -1,24 +1,27 @@
-# README
+# Building a Blog with Ruby on Rails 5.2.8.1 and PostgreSQL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Technologies
+* Ruby 2.7.7
+* Rails 5.2.8.1
 
-Things you may want to cover:
+### Project Steps
+* Environment Setup
 
-* Ruby version
+* Install Ruby 2.7.7
+* Install Rails 5.2.8.1
+* Create a New Rails Application
 
-* System dependencies
+* Generate a new Rails application
+* Configure the database
+* Designing the Blog
 
-* Configuration
+#### Create models and database tables
+* Set up associations
+* Implement validations
+* Implementing User Login
 
-* Database creation
+### Building the Blog Features
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Create blog posts
+* Add comments
+* Styling and Front-End Development
